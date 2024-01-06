@@ -96,7 +96,7 @@
 
         .logo {
             animation: movedown 1s linear 1;
-            animation-delay: 1s;
+            animation-delay: 0.1s;
             visibility: hidden;
             animation-fill-mode: forwards;
         }
@@ -121,7 +121,7 @@
     </header>
     <div class="login-container">
         <h2>Login</h2>
-        <form action="ssupnext.html" method="post">
+        <form action="action.php">
             <div class="form-group">
                 <input type="email" id="email" name="email" placeholder="enter your email id" required>
             </div>
@@ -131,7 +131,9 @@
             </div>
 
             <div class="form-group">
-                <button type="submit">Login</button>
+                <a href="ssupnext.html">
+                    <button>Login</button>
+                </a>
             </div>
         </form>
     </div>
