@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Smooch&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #18052b;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            flex-direction: column;
+            justify-content: space-around;
+            flex-shrink: 5;
+            flex-grow: 2;
+        }
+
+        button {
+            text-align: center;
+            align-items: center;
+            width: 50%;
+            height: 50%;
+            margin: 2%;
+            border-radius: 10%;
+            font-size: 200%;
+            font-family: 'Smooch', cursive;
+            transition: all;
+            transition-duration: 1s;
+        }
+
+        .food {
+            background-image: url("https://www.herofincorp.com/public/admin_assets/upload/blog/64b91a06ab1c8_food%20business%20ideas.webp");
+            background-repeat: no-repeat;
+            background-position: 50%;
+            background-blend-mode: darken;
+            background-size: 100%;
+            color: rgb(6, 6, 60);
+            animation: leftslide 1s linear 1;
+            animation-delay: 0.5s;
+            visibility: hidden;
+            animation-fill-mode: forwards;
+        }
+
+        .hiking {
+            background-image: url("https://img.traveltriangle.com/blog/wp-content/uploads/2019/11/Treks-In-The-World-cover_18th-Nov.jpg");
+            background-repeat: no-repeat;
+            background-position: 50%;
+            background-blend-mode: darken;
+            background-size: 100%;
+            color: rgb(6, 6, 60);
+            animation: rightslide 1s linear 1;
+            animation-delay: 0.5s;
+            visibility: hidden;
+            animation-fill-mode: forwards;
+        }
+
+        .clubs {
+            background-image: url("https://images.unsplash.com/photo-1581417478175-a9ef18f210c2?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y2x1YnxlbnwwfHwwfHx8MA%3D%3D");
+            background-repeat: no-repeat;
+            background-position: 50%;
+            background-blend-mode: darken;
+            background-size: 100%;
+            color: rgb(6, 6, 60);
+            animation: leftslide 1s linear 1;
+            animation-delay: 0.5s;
+            visibility: hidden;
+            animation-fill-mode: forwards;
+        }
+
+        .parks {
+            background-image: url("https://media.istockphoto.com/id/1081470818/photo/summer-in-the-park-trees-alley.jpg?s=612x612&w=0&k=20&c=aI5zza635w3rakEOk4a2E5e66riGKM0NohNMu3LKrkg=");
+            background-repeat: no-repeat;
+            background-position: bottom ;
+            background-blend-mode: darken;
+            background-size: 100%;
+            color: rgb(6, 6, 60);
+            animation: rightslide 1s linear 1;
+            animation-delay: 0.5s;
+            visibility: hidden;
+            animation-fill-mode: forwards;
+        }
+
+        .temples {
+            background-image: url("https://media.seniority.in/mageplaza/blog/post/ktpl_blog/Temples_-_main_image.jpg");
+            background-repeat: no-repeat;
+            background-position: 50%;
+            background-blend-mode: darken;
+            background-size: 100%;
+            color: rgb(6, 6, 60);
+            animation: leftslide 1s linear 1;
+            animation-delay: 0.5s;
+            visibility: hidden;
+            animation-fill-mode: forwards;
+        }
+
+        .Malls {
+            background-image: url("https://www.prestigeparksgrove.ind.in/images/prestige/nexus-mall-a-place-to-visit-in-east-bangalore.webp");
+            background-repeat: no-repeat;
+            background-position: 50%;
+            background-blend-mode: darken;
+            background-size: 100%;
+            color: rgb(6, 6, 60);
+            animation: rightslide 1s linear 1;
+            animation-delay: 0.5s;
+            visibility: hidden;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes leftslide {
+            0% {
+                transform: translateX(-100px);
+                visibility: visible;
+            }
+
+            100% {
+                transform: translateX (-0px);
+                visibility: visible;
+            }
+        }
+
+        @keyframes rightslide {
+            0% {
+                transform: translateX(+100px);
+                visibility: visible;
+            }
+
+            100% {
+                transform: translateX(+0px);
+                visibility: visible;
+            }
+        }
+
+        button:hover {
+            color: rgba(45, 2, 44, 0.203);
+            font-size: 300%;
+        }
+    </style>
+    <title>ssup</title>
+</head>
+
+<body>
+    <button class="food">Food</button>
+    <button class="hiking">Trek</button>
+    <button class="clubs">Clubs</button>
+    <button class="parks">Parks</button>
+    <button class="temples">Temples</button>
+    <button class="Malls">Malls</button>
+</body>
+
+</html>
