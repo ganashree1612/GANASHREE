@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Smooch&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #18052b;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group:last-child {
+            margin-bottom: 0;
+        }
+        header{
+            align-items: end;
+            position: absolute;
+            top: 0.5em;
+            left: 0;
+            width: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            flex-shrink: 2;
+            flex-grow: 1;
+            background-color: #ccc;
+            background-size: 75%;
+            border-radius: 50%;
+        }
+        h1{
+            text-align: center;
+            font-size: 40px;
+            font-family:'Smooch', cursive;
+            transition: all;
+            transition-duration: 1s;
+        }
+        h1:hover{
+            color: #c855eb;
+            font-size: 45px;
+        }
+        .logo{
+            animation: movedown 1s linear 1;
+            animation-delay: 1s;
+            visibility: hidden;
+            animation-fill-mode: forwards;
+        }
+        @keyframes movedown {
+            0%{
+                transform: translateY(-100px);
+                visibility: visible;
+            }
+            100%{
+                transform: translateY(-0px);
+                visibility: visible;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header><h1 class="logo">SSUP</h1></header>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form action="ssupnext.html" method="post">
+            <div class="form-group">
+                <input type="email" id="email" name="email" placeholder="enter your email id" required>
+            </div>
+
+            <div class="form-group">
+                <input type="password" id="password" name="password" placeholder="Password" required>
+            </div>
+
+            <div class="form-group">
+                <button type="submit">Login</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
