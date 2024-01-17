@@ -4,139 +4,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Document</title>
     <style>
-        * {
-            box-sizing: border-box;
+        body {
+            background: #EAD196;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        body,
-        html {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(45deg, #7700ff, #00ff77);
-            margin: 0;
-            overflow: hidden;
-            padding: 0;
+        .form {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 250px;
+            padding: 10px;
+        }
+
+        .form .form-header {
+            height: 30px;
             display: flex;
             align-items: center;
-            justify-content: center;
-            color: white;
-            background: #1e2021;
-            padding: 0;
-            margin: 0;
-            font-family: "Heebo", sans-serif;
-            height: 100%;
-            width: 100%;
-        }
-
-
-
-        @keyframes changeBackground {
-            0% {
-                background: linear-gradient(45deg, #7700ff, #00ff77);
-            }
-
-            100% {
-                background: linear-gradient(45deg, #00ff77, #7700ff);
-            }
-        }
-
-        .login-container {
-            background-color: #fff;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            width: 300px;
             text-align: center;
-        }
-
-        input {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            box-sizing: border-box;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        button {
-            width: 100%;
-            padding: 10px;
-            background-color: #4caf50;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
             cursor: pointer;
         }
 
-        button:hover {
-            background-color: #45a049;
+        .form .form-header>div {
+            width: calc(100%/3);
+            color: #F3EDC8;
+            font-size: 18px;
+            font-weight: 600;
         }
 
-        h2 {
-            color: #333;
+        .form.signup .form-header div.show-signup {
+            color: #7D0A0A;
         }
 
-        .form-group {
-            margin-bottom: 20px;
+        /* .form.signin .form-header div.show-signin {
+            color: #7D0A0A;
         }
 
-        .form-group:last-child {
-            margin-bottom: 0;
+        .form.reset .form-header div.show-reset {
+            color: #7D0A0A;
+        } */
+
+        .form .form-elements {
+            margin-top: 15px;
         }
 
-        header {
-            align-items: end;
-            position: absolute;
-            top: 0.5em;
-            left: 0;
+        .form .form-elements .form-element {
+            height: 50px;
+            opacity: 1;
+            overflow: hidden;
+        }
+
+        .form .form-elements input {
             width: 100%;
-            margin: 0;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
-            align-items: flex-start;
-            flex-wrap: wrap;
-            flex-shrink: 2;
-            flex-grow: 1;
-            /* background-color: #ccc;
-            background-size: 75%; */
+            padding: 10px;
+            font-size: 16px;
+            margin: 5px 0px;
+            border-radius: 10px;
+            box-sizing: border-box;
+            border: 1px solid #222;
+            background: #f5f5f5;
         }
 
-        h1 {
-            text-align: center;
-            font-size: 40px;
-            font-family: 'Smooch', Libre Baskerville;
-            transition: all;
-            transition-duration: 1s;
-            text-align: center;
-            color: #fff;
-            text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073
+        .form .form-elements button {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            margin-top: 5px;
+            border-radius: 10px;
+            background-color: #7D0A0A;
+            color: #f5f5f5;
+            cursor: pointer;
+            border: none;
+            outline: none;
         }
 
-
-        @keyframes glow {
-            from {
-                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
-            }
-
-            to {
-                text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
-
-            }
+        .form .form-elements button:hover {
+            background-color: #BF3131;
         }
 
-        h1:hover {
-            color: #c855eb;
-            font-size: 45px;
-        }
-
-        .logo {
+        #logo {
             text-align: center;
             animation: movedown 1s linear 1;
-            animation-delay: 1s;
+            animation-delay: 0.3s;
             visibility: hidden;
             animation-fill-mode: forwards;
         }
@@ -152,48 +107,47 @@
                 visibility: visible;
             }
         }
-
-        #password-message {
-            color: red;
-            font-size: 14px;
-        }
-
-        /* .sticker {
-            position: absolute;
-            width: 50px;
-            height: 50px;
-            background-repeat: no-repeat;
-            background-size: cover;
-            cursor: pointer;
-        } */
     </style>
 </head>
 
-<body id="bodyclr">
-    <header>
-        <h1 class="logo">DOUT</h1>
-        <!-- <button id="sidebar">Home </button>
-        <button id="sidebar">About </button>
-        <button id="sidebar">Contact </button> -->
-    </header>
-    <div class="login-container">
-        <h2>Login</h2>
-        <form action="ssupnext.html" method="post">
-            <div class="form-group">
-                <input type="email" id="email" name="email" placeholder="enter your email id" required>
+<body>
+    <form action="##" method="post" onsubmit="return(validatePassword()&&confirmpass())">
+        <nav class="px-4 py-4 bg-red-900 text-white flex">
+            <ul class="flex">
+                <a href="####" class="mx-2 cursor-pointer font-serif">Home</a>
+                <a href="####" class="mx-2 cursor-pointer font-serif">About</a>
+                <a href="####" class="mx-2 cursor-pointer font-serif">Contact</a>
+            </ul>
+        </nav>
+        <div class="text-center text-red-900 text-6xl font-semibold font-serif " id="logo">sup</div>
+        <div class="form signup">
+            <div class="form-header">
+                <div class="show-signup">Sign Up</div>
             </div>
-
-            <div class="form-group">
-                <input type="password" id="password" name="password" placeholder="Password" minlength="6"
-                    oninvalid="validatePassword()">
-                <div id="password-message"></div>
+            <div class="form-elements">
+                <div class="form-element">
+                    <input type="email" class="text-black" placeholder="enter your email" required>
+                </div>
+                <div class="form-element">
+                    <input type="password" class="text-black" id="password" name="password" placeholder="Password"
+                        minlength="6" onsubmit="validatePassword()">
+                    <div id="password-message"></div>
+                </div>
+                <div class="form-element">
+                    <input type="password" class="text-black" id="confirmpass" onsubmit="confirmpass()"
+                        name="confirmpass" placeholder="Confirm Password" required>
+                    <div id="confirm-password-message"></div>
+                </div>
+                <div class="form-element">
+                    <button type="submit" id="submit-btn" onclick="return(validatePassword()&&confirmPassword())">Sign
+                        Up</button>
+                </div>
+                <div><span class="text-black">Already have a account <a href="##"
+                            class="hover:text-yellow-200">signin</a></span><br><span class="text-black">Forgot password
+                        <a href="##" class="hover:text-yellow-200">reset</a></span></div>
             </div>
-
-            <div class="form-group">
-                <button type="submit" id="login">Login</button>
-            </div>
-        </form>
-    </div>
+        </div>
+    </form>
 </body>
 <script>
     function validatePassword() {
@@ -209,35 +163,27 @@
         var containsSpecialChar = specialCharRegex.test(password);
 
         if (isLengthValid && containsLetter && containsNumber && containsSpecialChar) {
-            passwordMessage.innerHTML = '';
+            passwordMessage.innerText = '';
+            return true;
         } else {
-            alert('Password must be at least 6 characters long and include at least one letter, one number, and one special character.');
-            const stop = document.querySelector('#login');
-            stop.addEventListener("submit", () => {
-                stop.preventDefault();
-            })
+            alert("Password must be at least 6 characters long and include at least one letter, one number, and one special character.");
+            return false;
+        }
+
+    }
+    function confirmPassword() {
+        var confirmpass = document.getElementById("confirmpass");
+        var passwordInput = document.getElementById('password');
+        var passwordMessage = document.getElementById('confirm-password-message');
+
+        if (confirmpass.value === passwordInput.value) {
+            passwordMessage.innerText = '';
+            return true;
+        } else {
+            alert("Password does not match");
+            return false;
         }
     }
-    const colors = ['#030637', '#3C0753', '#720455', '#910A67','#1e2021'];
-
-    function delayedcolorchange(color, donext) {
-        setTimeout(() => {
-            document.body.style.background = color;
-            donext();
-        }, 2000);
-    }
-
-    // Iterate through colors and change background color sequentially
-    function changeColorsSequentially(index) {
-        if (index < colors.length) {
-            delayedcolorchange(colors[index], () => {
-                changeColorsSequentially(index + 1);
-            });
-        }
-    }
-
-    // Start changing colors from the first color
-    changeColorsSequentially(0);
 </script>
 
 </html>
